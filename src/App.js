@@ -1,10 +1,28 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-class Headerss extends Component {
+class Navigation extends Component {
   render() {
-    return <div> Welcome to my site in {this.props.month}</div>;
+    return <div className="navigation"> 
+              {/* <img src="https://via.placeholder.com/350x150" alt="Working on it" width="200px" height="50px"></img>
+              <nav className="nav">
+                <button type="button" className="btn btn-outline-primary">Sign up for Emails</button>
+              </nav> */}
+           </div>;
+  }
+}
+
+class Quote extends Component {
+  constructor(props) {
+      super(props);
+      this.state = {quote: props.quote};
+  }
+
+  render() {
+    return (
+      <p className="quote"> "{this.state.quote}" </p>
+      
+    )
   }
 }
 
@@ -12,20 +30,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Headerss month="dec"></Headerss>
+        <Navigation></Navigation>
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          <Quote quote="tester"></Quote>
         </header>
       </div>
     );
